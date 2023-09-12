@@ -28,11 +28,11 @@ class ZemtuCopyrightUpdater:
             self._write_file(updated_content)
 
     def _read_file(self) -> str:
-        with open(self.filename, "r") as f_read:
+        with open(self.filename, "r", newline="", encoding="utf8") as f_read:
             return f_read.read()
 
     def _write_file(self, content: str) -> None:
-        with open(self.filename, "w") as f_write:
+        with open(self.filename, "w", newline="", encoding="utf8") as f_write:
             f_write.write(content)
 
     def _process_content(self, content: str) -> str:
